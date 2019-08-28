@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="333.0" prefWidth="698.0">
+         <children>
+            <TextField fx:id="a" layoutX="51.0" layoutY="92.0" />
+            <TextField fx:id="b" layoutX="51.0" layoutY="210.0" />
+            <Button layoutX="284.0" layoutY="151.0" mnemonicParsing="false" onAction="#calcObject" text="calc Object" />
+            <Button layoutX="422.0" layoutY="151.0" mnemonicParsing="false" onAction="#calcStatic" text="calc Static" />
+            <TextField fx:id="output" disable="true" layoutX="550.0" layoutY="151.0" prefHeight="31.0" prefWidth="114.0" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>

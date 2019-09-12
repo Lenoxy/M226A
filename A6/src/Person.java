@@ -11,22 +11,60 @@ public class Person{
     private double m_Salaer;
     private double m_Pensum;
 
+    private static int sAnzahlPersonen = 0;
+
 
     void Person(){
-        this.m_PersNr = -1;
+        this.setM_PersNr(-1);
         this.setM_Anrede("Frau");
         this.setM_Name("Neue Person");
         this.setM_Vorname("");
         this.setM_PLZ("6000");
-        this.setM_Eintrittsjahr();
+        this.setM_EintrittsjahrAuto();
         this.setM_Salaer(5000);
         this.setM_Pensum(100);
+        this.countPersonen();
     }
 
+    void Person(int m_PersNr){
+        this.setM_PersNr(m_PersNr);
+        this.countPersonen();
+    }
 
+    void Person(int m_PersNr, String m_Anrede, String m_Name, String m_Vorname){
+        this.setM_PersNr(m_PersNr);
+        this.setM_Anrede(m_Anrede);
+        this.setM_Name(m_Name);
+        this.setM_Vorname(m_Vorname);
+        this.countPersonen();
+    }
+
+    void Person(int m_PersNr, String m_Name, String m_Vorname, int m_Eintrittsjahr){
+        this.setM_PersNr(m_PersNr);
+        this.setM_Name(m_Name);
+        this.setM_Vorname(m_Vorname);
+        this.setM_Eintrittsjahr(m_Eintrittsjahr);
+        this.countPersonen();
+    }
+
+    private static double calculateLohn(double salaer, double pensum){
+        return (salaer / 100) * pensum;
+    }
+
+    private double calculateLohn(){
+        return (m_Salaer / 100) * m_Pensum;
+    }
+
+    private void countPersonen(){
+        Person.sAnzahlPersonen++;
+    }
 
     public int getM_PersNr(){
         return m_PersNr;
+    }
+
+    private void setM_PersNr(int m_PersNr) {
+        this.m_PersNr = m_PersNr;
     }
 
     public String getM_Anrede(){
@@ -73,10 +111,14 @@ public class Person{
         return m_Eintrittsjahr;
     }
 
-    public void setM_Eintrittsjahr(){
+    public void setM_EintrittsjahrAuto(){
         if(m_Eintrittsjahr >= 1975 && m_Eintrittsjahr <= 2019){
             this.m_Eintrittsjahr = Calendar.YEAR;
         }
+    }
+
+    public void setM_Eintrittsjahr(int m_Eintrittsjahr){
+        this.m_Eintrittsjahr = m_Eintrittsjahr;
     }
 
     public double getM_Salaer(){

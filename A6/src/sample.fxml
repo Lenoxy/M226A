@@ -1,8 +1,37 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" prefHeight="439.0" prefWidth="648.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="444.0" prefWidth="660.0">
+         <children>
+            <Button fx:id="maxArrowLeft" layoutX="126.0" layoutY="67.0" mnemonicParsing="false" onAction="#maxArrowLeftPressed" text="|&lt;--" />
+            <Button fx:id="arrowLeft" layoutX="171.0" layoutY="67.0" mnemonicParsing="false" onAction="#arrowLeftPressed" text="&lt;--" />
+            <Button fx:id="arrowRight" layoutX="286.0" layoutY="67.0" mnemonicParsing="false" onAction="#arrowRightPressed" text="--&gt;" />
+            <Button fx:id="maxArrowRight" layoutX="331.0" layoutY="67.0" mnemonicParsing="false" onAction="#maxArrowRightPressed" text="--&gt;|" />
+            <TextField fx:id="pageDisplay" editable="false" layoutX="205.0" layoutY="67.0" prefHeight="25.0" prefWidth="81.0" />
+            <TextField fx:id="pnrField" layoutX="144.0" layoutY="147.0" />
+            <TextField fx:id="nameField" layoutX="144.0" layoutY="207.0" />
+            <TextField fx:id="vornameField" layoutX="144.0" layoutY="259.0" />
+            <Label layoutX="82.0" layoutY="151.0" text="PNr" />
+            <Label layoutX="83.0" layoutY="211.0" text="Namen" />
+            <Label layoutX="83.0" layoutY="263.0" text="Vornamen" />
+            <Button fx:id="aenderungenVerwerfen" layoutX="118.0" layoutY="369.0" mnemonicParsing="false" onAction="#aenderungenVerwerfenPressed" text="Änderungen verwerfen" />
+            <Button fx:id="aenderungSpeichern" layoutX="260.0" layoutY="369.0" mnemonicParsing="false" onAction="#aenderungenSpeichernPressed" text="Änderungen Speichern" />
+         </children>
+      </AnchorPane>
+   </children>
 </GridPane>

@@ -14,7 +14,7 @@ public class Person{
     private static int sAnzahlPersonen = 0;
 
 
-    void Person(){
+    public Person(){
         this.setM_PersNr(-1);
         this.setM_Anrede("Frau");
         this.setM_Name("Neue Person");
@@ -26,21 +26,14 @@ public class Person{
         this.countPersonen();
     }
 
-    void Person(int m_PersNr){
-        this.setM_PersNr(m_PersNr);
-        this.countPersonen();
-    }
-
-    void Person(int m_PersNr, String m_Anrede, String m_Name, String m_Vorname){
-        this.setM_PersNr(m_PersNr);
+    public Person(String m_Anrede, String m_Name, String m_Vorname){
         this.setM_Anrede(m_Anrede);
         this.setM_Name(m_Name);
         this.setM_Vorname(m_Vorname);
         this.countPersonen();
     }
 
-    void Person(int m_PersNr, String m_Name, String m_Vorname, int m_Eintrittsjahr){
-        this.setM_PersNr(m_PersNr);
+    public Person(String m_Name, String m_Vorname, int m_Eintrittsjahr){
         this.setM_Name(m_Name);
         this.setM_Vorname(m_Vorname);
         this.setM_Eintrittsjahr(m_Eintrittsjahr);
@@ -57,7 +50,15 @@ public class Person{
 
     private void countPersonen(){
         Person.sAnzahlPersonen++;
+        this.setM_PersNr(sAnzahlPersonen);
     }
+
+
+
+
+
+
+
 
     public int getM_PersNr(){
         return m_PersNr;
